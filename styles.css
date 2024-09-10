@@ -4,76 +4,84 @@ body {
     padding: 0;
 }
 
-.header {
-    background-color: #f0f0f0;
-    padding: 1rem;
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+    padding: 1rem;
+    background-color: var(--darkest-color);
+    color: var(--lightest-color);
+  }
 
-.logo {
+  .logo-container {
+    margin-right: 20px;
+  }
+
+  .logo {
     display: flex;
     align-items: center;
-}
+    text-decoration: none;
+    color: var(--lightest-color);
+  }
 
-.logo img {
+  .logo img {
     width: 40px;
     height: 40px;
     margin-right: 10px;
-}
+  }
 
-.nav-links ul {
+  .logo span {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .nav-center {
+    display: flex;
+    justify-content: center;
+  }
+
+  .nav-center ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
-}
+  }
 
-.nav-links li {
+  .nav-center li {
     margin-right: 20px;
-}
+  }
 
-.nav-links a {
+  .nav-center a {
+    color: var(--lightest-color);
     text-decoration: none;
-    color: #333;
-}
+  }
 
-.profile-notification {
+  .nav-center a:hover {
+    color: var(--brand-color);
+  }
+
+  .auth-container {
     display: flex;
     align-items: center;
-}
+  }
 
-.profile-photo img {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    margin-right: 10px;
-}
+  .sign-in, .sign-up {
+    background-color: var(--brand-color);
+    color: var(--lightest-color);
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
 
-.main-content {
-    display: flex;
-    justify-content: space-between;
-    padding: 2rem;
-}
-
-.left-sidebar {
-    width: 20%;
-    background-color: #f7f7f7;
-    padding: 1rem;
-    border: 1px solid #ddd;
-}
-
-.main-section {
-    width: 60%;
-    padding: 1rem;
-}
-
-.summary-section {
-    width: 20%;
-    background-color: #f7f7f7;
-    padding: 1rem;
-    border: 1px solid #ddd;
-}
+  .sign-in:hover, .sign-up:hover {
+    background-color: var(--dark-color);
+  }
+  :root {
+    --brand-color: #15D155;
+    --darkest-color: #000000;
+    --dark-color: #363636;
+    --mid-color: #6C6C6C;
+    --light-color: #DADADA;
+    --lightest-color: #FFFFFF;
+      }
