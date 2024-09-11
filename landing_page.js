@@ -7,3 +7,8 @@ function openNav() {
 function closeNav() {
   document.getElementById("mySidepanel").style.width = "0";
 }
+
+// hero section
+function getStarted() {
+  window.location.href = "your-planting-guide-form-url"; // Replace with actual URL
+}
