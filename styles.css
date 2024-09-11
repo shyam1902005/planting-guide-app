@@ -1,65 +1,67 @@
 :root {
-    --brand-color: #15D155;
-    --darkest-color: #000000;
-    --dark-color: #363636;
-    --mid-color: #6C6C6C;
-    --light-color: #DADADA;
-    --lightest-color: #FFFFFF;
-      }
-
-      
-      .hero-section {
-        background-image: url('plant_background.jpg'); /* Add your image URL here */
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat; /* Ensure no repetition of the image */
-        background-attachment: fixed; /* Keeps the background image fixed when scrolling */
-        text-align: center;
-        color: var(--lightest-color);
-        width: 100vw; /* Full width */
-        height: 100vh; /* Full height (viewport height) */
-        display: flex; /* Center the content */
-        justify-content: center; /* Center horizontally */
-        align-items: center; /* Center vertically */
-        position: relative;
-        filter: contrast(1.2) brightness(0.8) saturate(1.1);
-    }
-    
-    .hero-content {
-        background-color: rgba(0, 0, 0, 0.5); /* Add a dark overlay for better text readability */
-        padding: 50px;
-        border-radius: 8px;
-    }
-    
-    .hero-title {
-        font-size: 3rem;
-        margin-bottom: 10px;
-    }
-    
-    .hero-subheading {
-        font-size: 1.5rem;
-        margin-bottom: 20px;
-    }
-    
-    .hero-button {
-        background-color: var(--brand-color);
-        color: var(--lightest-color);
-        border: none;
-        padding: 15px 30px;
-        font-size: 1.2rem;
-        cursor: pointer;
-        border-radius: 5px;
-    }
-    
-    .hero-button:hover {
-        background-color: var(--dark-color);
-    }
+  --brand-color: #15D155;
+  --darkest-color: #000000;
+  --dark-color: #363636;
+  --mid-color: #6C6C6C;
+  --light-color: #DADADA;
+  --lightest-color: #FFFFFF;
+}
 
 body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0px;
-    padding-top: 60px;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  padding-top: 60px; /* Adjust as needed to ensure spacing for fixed header */
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* hero section */
+.hero-section {
+  background-image: url('plant_background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  text-align: center;
+  color: var(--lightest-color);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  filter: contrast(1.2) brightness(0.8) saturate(1.1);
+  box-sizing: border-box; /* Ensure padding and borders don't affect width/height */
+}
+
+.hero-content {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 50px;
+  border-radius: 8px;
+}
+
+.hero-title {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero-subheading {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.hero-button {
+  background-color: var(--brand-color);
+  color: var(--lightest-color);
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.hero-button:hover {
+  background-color: var(--dark-color);
 }
 
 header {
@@ -69,127 +71,202 @@ header {
   padding: 1rem;
   background-color: var(--darkest-color);
   color: var(--lightest-color);
-  position: fixed; /* Fixes the header at the top */
-  top: 0; /* Aligns it to the top */
-  width: 100%; /* Ensures it spans the full width of the viewport */
-  z-index: 1000; /* Ensures it stays on top of other content */
-  }
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-sizing: border-box; /* Ensure padding/borders don't affect width */
+}
 
-  .logo-container {
-    margin-right: 20px;
-  }
+.logo-container {
+  margin-right: 20px;
+}
 
-  .logo {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: var(--lightest-color);
-  }
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--lightest-color);
+}
 
-  .logo img {
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
-  }
+.logo img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
 
-  .logo span {
-    font-size: 18px;
-    font-weight: bold;
-  }
+.logo span {
+  font-size: 18px;
+  font-weight: bold;
+}
 
-  .nav-center {
-    display: flex;
-    justify-content: center;
-  }
+.nav-center {
+  display: flex;
+  justify-content: center;
+}
 
-  .nav-center ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-  }
+.nav-center ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
 
-  .nav-center li {
-    margin-right: 20px;
-  }
+.nav-center li {
+  margin-right: 20px;
+}
 
-  .nav-center a {
-    color: var(--lightest-color);
-    text-decoration: none;
-  }
+.nav-center a {
+  color: var(--lightest-color);
+  text-decoration: none;
+}
 
-  .nav-center a:hover {
-    color: var(--brand-color);
-  }
+.nav-center a:hover {
+  color: var(--brand-color);
+}
 
-  .auth-container {
-    display: flex;
-    align-items: center;
-  }
+.auth-container {
+  display: flex;
+  align-items: center;
+}
 
-  .sign-in, .sign-up {
-    background-color: var(--brand-color);
-    color: var(--lightest-color);
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-  }
+.sign-in, .sign-up {
+  background-color: var(--brand-color);
+  color: var(--lightest-color);
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
 
-  .sign-in:hover, .sign-up:hover {
-    background-color: var(--dark-color);
-  }
-
+.sign-in:hover, .sign-up:hover {
+  background-color: var(--dark-color);
+}
 
 /* The sidepanel menu */
 .sidepanel {
-    height: 250vh; /* Specify a height */
-    width: 0; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
-    top: 0;
-    left: 0;
-    background-color: #000000; /* Black*/
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /* Place content 60px from the top */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
-  }
+  height: 100%; /* Adjust to fit viewport height */
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #000000;
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
+}
 
-  /* The sidepanel links */
-  .sidepanel a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-  }
+.sidepanel a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
 
-  /* When you mouse over the navigation links, change their color */
-  .sidepanel a:hover {
-    color: #15D155;
-  }
+.sidepanel a:hover {
+  color: #15D155;
+}
 
-  /* Position and style the close button (top right corner) */
-  .sidepanel .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-  }
+.sidepanel .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
 
-  /* Style the button that is used to open the sidepanel */
-  .openbtn {
-    font-size: 20px;
-    cursor: pointer;
-    background-color: #111;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-  }
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
 
-  .openbtn:hover {
-    background-color: #444;
-  }
+.openbtn:hover {
+  background-color: #444;
+}
+
+/* How It Works Section */
+/* General Styles for the body and header remain unchanged */
+
+/* How It Works Section */
+.how-it-works {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: calc(100vh - 60px); /* Full viewport height minus the header height */
+  padding: 20px; /* Add some padding if needed */
+  box-sizing: border-box;
+}
+
+/* How It Works Section Header */
+.section-header {
+  text-align: center;
+  margin-bottom: 40px; /* Space below the header */
+}
+
+.section-header h2 {
+  font-size: 2.5rem; /* Size for the main title */
+  color: var(--darkest-color); /* Color for the title */
+  margin-bottom: 10px; /* Space below the title */
+}
+
+.section-header p {
+  font-size: 1.2rem; /* Size for the introductory text */
+  color: var(--mid-color); /* Color for the text */
+  line-height: 1.6; /* Improved line height */
+}
+
+/* Steps Container */
+.steps-container {
+  display: grid; /* Use grid layout for spacing */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+  gap: 30px; /* Space between columns */
+  padding: 0 20px; /* Padding to prevent content from touching the sides */
+  max-width: 1200px; /* Optional: Set a max-width to limit the width of content */
+  margin: 0 auto; /* Center the container */
+}
+
+/* Individual Step Styling */
+.step {
+  background-color: var(--darkest-color);
+  color: var(--lightest-color);
+  padding: 30px; /* Space inside each step */
+  border-radius: 12px; /* Rounded corners */
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px; /* Ensure a minimum height for consistency */
+  margin: 0; /* Remove default margins */
+}
+
+.step:hover {
+  transform: translateY(-10px); /* Lift the card on hover */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4); /* Deepen shadow on hover */
+}
+
+.step .icon {
+  font-size: 2rem; /* Smaller icon size */
+  margin-bottom: 15px; /* Space below icon */
+}
+
+.step h3 {
+  font-size: 1.8rem; /* Larger heading font size */
+  margin-bottom: 15px; /* Space below heading */
+}
+
+.step p {
+  font-size: 1.1rem; /* Slightly larger paragraph font size */
+  line-height: 1.6; /* Improved line height */
+}
+
 
