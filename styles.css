@@ -11,11 +11,11 @@ body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
-  padding-top: 60px; /* Adjust as needed to ensure spacing for fixed header */
-  overflow-x: hidden; /* Prevent horizontal scroll */
+  padding-top: 80px; /* Increased to ensure proper space for fixed header */
+  overflow-x: hidden;
 }
 
-/* hero section */
+/* Hero Section */
 .hero-section {
   background-image: url('plant_background.jpg');
   background-size: cover;
@@ -31,7 +31,7 @@ body {
   align-items: center;
   position: relative;
   filter: contrast(1.2) brightness(0.8) saturate(1.1);
-  box-sizing: border-box; /* Ensure padding and borders don't affect width/height */
+  box-sizing: border-box;
 }
 
 .hero-content {
@@ -64,6 +64,7 @@ body {
   background-color: var(--dark-color);
 }
 
+/* Header */
 header {
   display: flex;
   justify-content: space-between;
@@ -75,7 +76,7 @@ header {
   top: 0;
   width: 100%;
   z-index: 1000;
-  box-sizing: border-box; /* Ensure padding/borders don't affect width */
+  box-sizing: border-box;
 }
 
 .logo-container {
@@ -130,7 +131,8 @@ header {
   align-items: center;
 }
 
-.sign-in, .sign-up {
+.sign-in,
+.sign-up {
   background-color: var(--brand-color);
   color: var(--lightest-color);
   border: none;
@@ -139,13 +141,14 @@ header {
   cursor: pointer;
 }
 
-.sign-in:hover, .sign-up:hover {
+.sign-in:hover,
+.sign-up:hover {
   background-color: var(--dark-color);
 }
 
-/* The sidepanel menu */
+/* Sidepanel Menu */
 .sidepanel {
-  height: 100%; /* Adjust to fit viewport height */
+  height: 100%;
   width: 0;
   position: fixed;
   z-index: 1;
@@ -192,81 +195,245 @@ header {
 }
 
 /* How It Works Section */
-/* General Styles for the body and header remain unchanged */
-
-/* How It Works Section */
 .how-it-works {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: calc(100vh - 60px); /* Full viewport height minus the header height */
-  padding: 20px; /* Add some padding if needed */
+  min-height: calc(100vh - 80px); /* Account for header height */
+  padding: 20px;
   box-sizing: border-box;
 }
 
-/* How It Works Section Header */
 .section-header {
   text-align: center;
-  margin-bottom: 40px; /* Space below the header */
+  margin-bottom: 40px;
 }
 
 .section-header h2 {
-  font-size: 2.5rem; /* Size for the main title */
-  color: var(--darkest-color); /* Color for the title */
-  margin-bottom: 10px; /* Space below the title */
+  font-size: 2.5rem;
+  color: var(--darkest-color);
 }
 
 .section-header p {
-  font-size: 1.2rem; /* Size for the introductory text */
-  color: var(--mid-color); /* Color for the text */
-  line-height: 1.6; /* Improved line height */
+  font-size: 1.2rem;
+  color: var(--mid-color);
+  line-height: 1.6;
 }
 
-/* Steps Container */
 .steps-container {
-  display: grid; /* Use grid layout for spacing */
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
-  gap: 30px; /* Space between columns */
-  padding: 0 20px; /* Padding to prevent content from touching the sides */
-  max-width: 1200px; /* Optional: Set a max-width to limit the width of content */
-  margin: 0 auto; /* Center the container */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* Individual Step Styling */
 .step {
   background-color: var(--darkest-color);
   color: var(--lightest-color);
-  padding: 30px; /* Space inside each step */
-  border-radius: 12px; /* Rounded corners */
+  padding: 30px;
+  border-radius: 12px;
   text-align: center;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Shadow for depth */
-  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 200px; /* Ensure a minimum height for consistency */
-  margin: 0; /* Remove default margins */
+  min-height: 200px;
 }
 
 .step:hover {
-  transform: translateY(-10px); /* Lift the card on hover */
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4); /* Deepen shadow on hover */
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
 }
 
 .step .icon {
-  font-size: 2rem; /* Smaller icon size */
-  margin-bottom: 15px; /* Space below icon */
+  font-size: 2rem;
+  margin-bottom: 15px;
 }
 
 .step h3 {
-  font-size: 1.8rem; /* Larger heading font size */
-  margin-bottom: 15px; /* Space below heading */
+  font-size: 1.8rem;
+  margin-bottom: 15px;
 }
 
 .step p {
-  font-size: 1.1rem; /* Slightly larger paragraph font size */
-  line-height: 1.6; /* Improved line height */
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Features Section */
+.features-section {
+  padding: 60px 20px;
+  background-color: var(--light-color);
+  border-top: 5px solid var(--brand-color);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.features-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.feature-item {
+  text-align: center;
+  flex-basis: 30%;
+  margin: 20px;
+  background-color: var(--lightest-color);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+.feature-icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 15px;
+}
+
+.feature-title {
+  margin-bottom: 10px;
+  font-size: 1.6rem;
+  color: var(--dark-color);
+}
+
+.feature-description {
+  color: var(--mid-color);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.testimonial-section{
+  border-top: 5px solid var(--mid-color);
+}
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+  height: 100vh;
+  width: 100vh;
+  display: flex;
+  align-items: center; /* Center the content vertically */
+  justify-content: center;
+}
+
+/* Profile container styles */
+.profile-container {
+  text-align: center;
+  padding: 20px; /* Add some padding */
+}
+
+.profile-container img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-top: 15vh;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.profile-name {
+  font-size: 18px; /* Size of the name text */
+  font-weight: bold; /* Bold text for names */
+  margin-top: 10px; /* Space between image and name */
+  color: #333; /* Darker text color for better readability */
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -8vh;
+  padding: 16px;
+  color: var(--brand-color);
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.prev {
+  left: 0;
+  border-radius: 5px 0 0 5px;
+  -webkit-border-radius: 5px 0 0 5px;
+  -moz-border-radius: 5px 0 0 5px;
+  -ms-border-radius: 5px 0 0 5px;
+  -o-border-radius: 5px 0 0 5px;
+}
+.next {
+  right: 0;
+  border-radius: 0px 3px 3px 0px;
+  -webkit-border-radius: 0px 3px 3px 0px;
+  -moz-border-radius: 0px 3px 3px 0px;
+  -ms-border-radius: 0px 3px 3px 0px;
+  -o-border-radius: 0px 3px 3px 0px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.text {
+  font-size: 20px; /* Increased font size */
+  font-weight: bold; /* Make the caption text bold */
+  color: #f2f2f2;
+  padding: 10px;
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* Review text styling */
+.review-text {
+  font-size: 18px; /* Increased font size for better readability */
+  color: #333; /* Darker text for better readability */
+  font-weight: 500; /* Slightly bold text for emphasis */
+  margin-top: 10px; /* Space above the review text */
+  line-height: 1.5; /* Adjust line height for readability */
+  letter-spacing: 0.4px; /* Slight letter spacing for a clean look */
+  padding: 10px; /* Padding around the text for better spacing */
+  max-width: 85%; /* Ensure the text doesn’t stretch too wide */
+  margin-left: auto;
+  margin-right: auto; /* Center the text container */
+  font-family: 'Playfair Display', serif;
+
+
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .review-text {
+    font-size: 16px; /* Slightly smaller font size on smaller screens */
+    padding: 8px; /* Reduced padding on smaller screens */
+  }
 }
 
 
