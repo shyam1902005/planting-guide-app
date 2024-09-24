@@ -25,7 +25,7 @@ body {
   text-align: center;
   color: var(--lightest-color);
   width: 100vw;
-  height: 100vh;
+  height:  calc(100vh - 80px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -63,6 +63,12 @@ body {
 .hero-button:hover {
   background-color: var(--dark-color);
 }
+@media (max-width: 768px) {
+  .hero-section {
+    background-attachment: scroll;
+    background-size: cover;
+  }
+}
 
 /* Header */
 header {
@@ -70,7 +76,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background-color: var(--darkest-color);
+  background-color: rgba(0, 0, 0, 0.8);;
   color: var(--lightest-color);
   position: fixed;
   top: 0;
@@ -296,8 +302,8 @@ header {
 }
 
 .feature-icon {
-  width: 80px;
-  height: 80px;
+  width: 300px;
+  height: 300px;
   margin-bottom: 15px;
 }
 
@@ -316,6 +322,17 @@ header {
 .testimonial-section{
   border-top: 5px solid var(--mid-color);
 }
+@media (max-width: 768px) {
+  .steps-container {
+    grid-template-columns: 1fr; /* Single column for small screens */
+  }
+
+  .features-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 /* Slideshow container */
 .slideshow-container {
   max-width: 1000px;
@@ -450,6 +467,7 @@ header {
 .cta-content {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   max-width: 1200px;
   width: 100%;
 }
@@ -489,6 +507,7 @@ header {
   border: 1px solid var(--mid-color);
   border-radius: 5px;
   font-size: 1rem;
+  width: 95%;
 }
 
 .cta-form button {
@@ -500,6 +519,7 @@ header {
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  width: 100%;
 }
 
 .cta-form button:hover {
@@ -604,4 +624,14 @@ header {
     align-items: center;
   }
 }
+/* for testimonials */
+@media (max-width: 768px) {
+  .profile-container img {
+    width: 100px;
+    height: 100px;
+  }
 
+  .review-text {
+    font-size: 1rem;
+  }
+}

@@ -68,3 +68,12 @@ const slideshowContainer = document.querySelector('.slideshow-container');
 slideshowContainer.addEventListener('mouseover', stopSlideShow); // Stop slideshow on hover
 slideshowContainer.addEventListener('mouseout', startSlideShow); // Restart slideshow on mouse out
 
+window.addEventListener('scroll', function() {
+  const header = document.querySelector('header');
+  
+  if (window.scrollY > 50) {
+    header.style.backgroundColor = 'rgba(0, 0, 0, 0.8)'; // Darker when scrolled
+  } else {
+    header.style.backgroundColor = 'rgba(0, 0, 0, 1)'; // More transparent at the top
+  }
+});
