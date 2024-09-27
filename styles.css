@@ -11,7 +11,7 @@ body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
-  padding-top: 80px; /* Increased to ensure proper space for fixed header */
+  padding-top:0px; /* Increased to ensure proper space for fixed header */
   overflow-x: hidden;
 }
 
@@ -25,7 +25,7 @@ body {
   text-align: center;
   color: var(--lightest-color);
   width: 100vw;
-  height:  calc(100vh - 80px);
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -76,7 +76,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background-color: rgba(0, 0, 0, 0.8);;
+  background-color: var(--darkest-color);
   color: var(--lightest-color);
   position: fixed;
   top: 0;

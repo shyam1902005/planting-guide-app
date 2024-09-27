@@ -72,8 +72,8 @@ window.addEventListener('scroll', function() {
   const header = document.querySelector('header');
   
   if (window.scrollY > 50) {
-    header.style.backgroundColor = 'rgba(0, 0, 0, 0.8)'; // Darker when scrolled
+    header.style.backgroundColor = 'rgba(0, 0, 0,0.8)';
   } else {
-    header.style.backgroundColor = 'rgba(0, 0, 0, 1)'; // More transparent at the top
+    header.style.backgroundColor = 'rgba(0, 0, 0, 1)';
   }
 });
