@@ -27,7 +27,7 @@ document.getElementById("plant-type").addEventListener("change", function () {
                 return;
             }
 
-            // Send plant name to PHP using fetch
+            // Fetch plant info and possible locations from the server
             fetch('../get_plant_info.php', {
                 method: 'POST',
                 headers: {
@@ -35,10 +35,22 @@ document.getElementById("plant-type").addEventListener("change", function () {
                 },
                 body: `plant_name=${encodeURIComponent(plantName)}`
             })
-            .then(response => response.text()) // Change to text if returning plain text
+            .then(response => response.text()) // Expecting plain text
             .then(data => {
+                // Split the response data by a delimiter (e.g., |)
+                const [info, locations] = data.split('|');
+
+                // Display plant information
                 plantInfo.innerHTML = `<h3>Plant Info for ${plantName.charAt(0).toUpperCase() + plantName.slice(1)}</h3>`;
-                plantInfo.innerHTML += `<p>${data}</p>`; // Add plain text data to plant info
+                
+                // Show multiple locations where the plant can be grown
+                if (locations) {
+                    plantInfo.innerHTML += `<p><strong>Can be grown in:</strong> ${locations}</p>`;
+                }
+
+                // Split the plant information to show it line by line
+                const plantDetails = info.split(',').map(detail => `<p>${detail.trim()}</p>`).join('');
+                plantInfo.innerHTML += plantDetails; // Add formatted plant information
             })
             .catch(error => {
                 console.error('Error:', error);
@@ -52,12 +64,37 @@ document.getElementById("plant-type").addEventListener("change", function () {
         container.classList.add("expanded"); // Expand the container
         dynamicInput.innerHTML = `
             <label for="location">Select your location (State):</label><br><br>
-            <select id="location" class="dropdown" required>
+            <select id="location" class="dropdown" required >
                 <option value="">--Select State--</option>
-                <option value="Maharashtra">Maharashtra</option>
-                <option value="Karnataka">Karnataka</option>
-                <option value="Tamil Nadu">Tamil Nadu</option>
-                <option value="Gujarat">Gujarat</option>
+                <option value="Andhra Pradesh">Andhra Pradesh</option>
+<option value="Arunachal Pradesh">Arunachal Pradesh</option>
+<option value="Assam">Assam</option>
+<option value="Bihar">Bihar</option>
+<option value="Chhattisgarh">Chhattisgarh</option>
+<option value="Goa">Goa</option>
+<option value="Gujarat">Gujarat</option>
+<option value="Haryana">Haryana</option>
+<option value="Himachal Pradesh">Himachal Pradesh</option>
+<option value="Jharkhand">Jharkhand</option>
+<option value="Karnataka">Karnataka</option>
+<option value="Kerala">Kerala</option>
+<option value="Madhya Pradesh">Madhya Pradesh</option>
+<option value="Maharashtra">Maharashtra</option>
+<option value="Manipur">Manipur</option>
+<option value="Meghalaya">Meghalaya</option>
+<option value="Mizoram">Mizoram</option>
+<option value="Nagaland">Nagaland</option>
+<option value="Odisha">Odisha</option>
+<option value="Punjab">Punjab</option>
+<option value="Rajasthan">Rajasthan</option>
+<option value="Sikkim">Sikkim</option>
+<option value="Tamil Nadu">Tamil Nadu</option>
+<option value="Telangana">Telangana</option>
+<option value="Tripura">Tripura</option>
+<option value="Uttar Pradesh">Uttar Pradesh</option>
+<option value="Uttarakhand">Uttarakhand</option>
+<option value="West Bengal">West Bengal</option>
+
                 <!-- Add more states as needed -->
             </select><br><br>
             <label for="avg-temp">Average Temperature (°C):</label><br><br>
@@ -115,19 +152,17 @@ document.getElementById("plant-type").addEventListener("change", function () {
             }
 
             // Send location-based data to PHP using fetch
-            // Update this section in your JavaScript code
             fetch('../get_suitable_plants.php', {
-             method: 'POST',
-              headers: {
-                         'Content-Type': 'application/x-www-form-urlencoded',
-                         },
-                 body: `location=${encodeURIComponent(location)}&avg_temp=${encodeURIComponent(avgTemp)}&sunlight=${encodeURIComponent(sunlight)}&water_availability=${encodeURIComponent(waterAvailability)}&humidity=${encodeURIComponent(humidity)}&soil_quality=${encodeURIComponent(soilQuality)}&soil_ph=${encodeURIComponent(soilPH)}`
-                })
-
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `location=${encodeURIComponent(location)}&avg_temp=${encodeURIComponent(avgTemp)}&sunlight=${encodeURIComponent(sunlight)}&water_availability=${encodeURIComponent(waterAvailability)}&humidity=${encodeURIComponent(humidity)}&soil_quality=${encodeURIComponent(soilQuality)}&soil_ph=${encodeURIComponent(soilPH)}`
+            })
             .then(response => response.text()) // Change to text if returning plain text or HTML
             .then(data => {
                 plantInfo.innerHTML = `<h3>Recommended Plants for ${location}</h3>`;
-                plantInfo.innerHTML += `<p>${data}</p>`; // Add plain text or HTML response to plant info
+                plantInfo.innerHTML += `<p>${data.replace(/\n/g, '<br>')}</p>`; // Add plain text or HTML response to plant info
             })
             .catch(error => {
                 console.error('Error:', error);

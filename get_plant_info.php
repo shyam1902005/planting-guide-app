@@ -17,7 +17,14 @@ if ($conn->connect_error) {
 $plant_name = $_POST['plant_name'] ?? '';
 
 // Prepare SQL query to find the plant details based on the plant name
-$sql = "SELECT * FROM plants WHERE LOWER(plant_name) = LOWER(?)"; // Assuming plant names are case-insensitive
+$sql = "
+    SELECT p.*, GROUP_CONCAT(l.state_name SEPARATOR ', ') AS locations
+    FROM plants p
+    LEFT JOIN plant_locations pl ON p.id = pl.plant_id
+    LEFT JOIN locations l ON pl.location_id = l.id
+    WHERE LOWER(p.plant_name) = LOWER(?)
+    GROUP BY p.id
+";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("s", $plant_name);
 $stmt->execute();
@@ -25,24 +32,26 @@ $result = $stmt->get_result();
 
 $plant_info = [];
 if ($result->num_rows > 0) {
-    // Fetch plant information
+    // Fetch plant information along with its associated locations
     $plant_info = $result->fetch_assoc();
 }
 
-// Return the result as HTML
-header('Content-Type: text/html');
+// Return the result as plain text (with delimiter '|')
+header('Content-Type: text/plain');
 if (!empty($plant_info)) {
-    echo "<h2>Details for " . htmlspecialchars($plant_info['plant_name']) . "</h2>";
-    echo "<p><strong>Location:</strong> " . htmlspecialchars($plant_info['location']) . "</p>";
-    echo "<p><strong>Average Temperature (Min):</strong> " . htmlspecialchars($plant_info['avg_temp_min']) . "°C</p>";
-    echo "<p><strong>Average Temperature (Max):</strong> " . htmlspecialchars($plant_info['avg_temp_max']) . "°C</p>";
-    echo "<p><strong>Sunlight:</strong> " . htmlspecialchars($plant_info['sunlight']) . "</p>";
-    echo "<p><strong>Water Availability:</strong> " . htmlspecialchars($plant_info['water_availability']) . "</p>";
-    echo "<p><strong>Humidity:</strong> " . htmlspecialchars($plant_info['humidity']) . "</p>";
-    echo "<p><strong>Soil Quality:</strong> " . htmlspecialchars($plant_info['soil_quality']) . "</p>";
-    echo "<p><strong>Soil pH:</strong> " . htmlspecialchars($plant_info['soil_ph_min']) . " to " . htmlspecialchars($plant_info['soil_ph_max']) . "</p>";
+    // Gather plant details as plain text
+    $details = "Location: " . htmlspecialchars($plant_info['locations']) . ", " .
+               "Avg Temp: " . htmlspecialchars($plant_info['avg_temp_min']) . "°C to " . htmlspecialchars($plant_info['avg_temp_max']) . "°C, " .
+               "Sunlight: " . htmlspecialchars($plant_info['sunlight']) . ", " .
+               "Water Availability: " . htmlspecialchars($plant_info['water_availability']) . ", " .
+               "Humidity: " . htmlspecialchars($plant_info['humidity']) . ", " .
+               "Soil Quality: " . htmlspecialchars($plant_info['soil_quality']) . ", " .
+               "Soil pH: " . htmlspecialchars($plant_info['soil_ph_min']) . " to " . htmlspecialchars($plant_info['soil_ph_max']);
+
+    // Split the location and details with a delimiter (|) for JavaScript parsing
+    echo $details . "|" . htmlspecialchars($plant_info['locations']);
 } else {
-    echo "No information found for the specified plant.";
+    echo "No information found for the specified plant.|";
 }
 
 $stmt->close();

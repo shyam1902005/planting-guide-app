@@ -23,15 +23,20 @@ $soil_quality = $_POST['soil_quality'] ?? '';
 $soil_ph = $_POST['soil_ph'] ?? '';
 
 // Prepare SQL query to find suitable plants based on input conditions
-$sql = "SELECT plant_name FROM plants 
-        WHERE location = ? 
-        AND avg_temp_min <= ? AND avg_temp_max >= ?
-        AND sunlight = ?
-        AND water_availability = ?
-        AND humidity = ?
-        AND soil_quality = ?
-        AND soil_ph_min <= ? AND soil_ph_max >= ?
-        ORDER BY plant_name"; // Order the results by plant name
+$sql = "SELECT plants.plant_name 
+        FROM plants
+        JOIN plant_locations ON plants.id = plant_locations.plant_id
+        JOIN locations ON plant_locations.location_id = locations.id
+        WHERE locations.state_name = ?
+        AND plants.avg_temp_min <= ? 
+        AND plants.avg_temp_max >= ?
+        AND plants.sunlight = ?
+        AND plants.water_availability = ?
+        AND plants.humidity = ?
+        AND plants.soil_quality = ?
+        AND plants.soil_ph_min <= ? 
+        AND plants.soil_ph_max >= ?
+        ORDER BY plants.plant_name"; // Order the results by plant name
 
 $stmt = $conn->prepare($sql);
 $stmt->bind_param(
