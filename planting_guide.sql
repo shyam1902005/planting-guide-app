@@ -1,63 +1,30 @@
--- Create the database
-CREATE DATABASE planting_guide;
-
--- Use the planting_guide database
+-- Create the 'plants' table
+CREATE DATABASE IF NOT EXISTS planting_guide;
 USE planting_guide;
 
--- Table for storing plant information
-CREATE TABLE plants (
+CREATE TABLE IF NOT EXISTS plants (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(255) NOT NULL,
-    scientific_name VARCHAR(255),
-    sunlight_requirement VARCHAR(100),
-    soil_quality VARCHAR(100),
-    temperature_min DECIMAL(5, 2), -- Minimum temperature for growing in °C
-    temperature_max DECIMAL(5, 2), -- Maximum temperature for growing in °C
-    humidity_level VARCHAR(50), -- Humidity requirement (low, moderate, high)
-    soil_ph_min DECIMAL(3, 1), -- Minimum soil pH value
-    soil_ph_max DECIMAL(3, 1) -- Maximum soil pH value
+    plant_name VARCHAR(100) NOT NULL,
+    location VARCHAR(100) NOT NULL,
+    avg_temp DECIMAL(5, 2) NOT NULL,
+    sunlight ENUM('full sun', 'partial sun', 'shade') NOT NULL,
+    water_availability ENUM('low', 'moderate', 'high') NOT NULL,
+    humidity ENUM('low', 'moderate', 'high') NOT NULL,
+    soil_quality ENUM('sandy', 'loamy', 'clay', 'peaty', 'chalky', 'silty') NOT NULL,
+    soil_ph_min DECIMAL(4, 2) NOT NULL,
+    soil_ph_max DECIMAL(4, 2) NOT NULL
 );
 
--- Table for storing location-specific plant recommendations
-CREATE TABLE location_based_plants (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    location VARCHAR(255) NOT NULL, -- User's location (city or region)
-    avg_temperature DECIMAL(5, 2) NOT NULL, -- Average temperature in °C
-    sunlight VARCHAR(50) NOT NULL, -- Sunlight exposure (full sun, partial sun, shade)
-    humidity VARCHAR(50) NOT NULL, -- Humidity level (low, moderate, high)
-    soil_color VARCHAR(50) NOT NULL, -- Soil color (dark, light, red, yellow)
-    soil_ph DECIMAL(3, 1) NOT NULL -- Soil pH value
-);
-
--- Table for associating location-based conditions with plant recommendations
-CREATE TABLE recommended_plants (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    location_id INT NOT NULL, -- Reference to the location-based condition
-    plant_id INT NOT NULL, -- Reference to the plant
-    FOREIGN KEY (location_id) REFERENCES location_based_plants(id),
-    FOREIGN KEY (plant_id) REFERENCES plants(id)
-);
-
--- Sample Data Insertion (Optional)
-
--- Inserting some sample plants
-INSERT INTO plants (name, scientific_name, sunlight_requirement, soil_quality, temperature_min, temperature_max, humidity_level, soil_ph_min, soil_ph_max)
+-- Insert sample data
+INSERT INTO plants (plant_name, location, avg_temp, sunlight, water_availability, humidity, soil_quality, soil_ph_min, soil_ph_max)
 VALUES
-('Rose', 'Rosa', 'full sun', 'well-drained', 16.0, 32.0, 'moderate', 6.0, 7.5),
-('Tulip', 'Tulipa', 'partial sun', 'well-drained', 10.0, 20.0, 'low', 6.5, 7.5),
-('Lavender', 'Lavandula', 'full sun', 'sandy', 18.0, 30.0, 'low', 6.0, 8.0),
-('Basil', 'Ocimum basilicum', 'partial sun', 'moist', 18.0, 28.0, 'moderate', 5.5, 6.5);
-
--- Inserting some sample location-based conditions
-INSERT INTO location_based_plants (location, avg_temperature, sunlight, humidity, soil_color, soil_ph)
-VALUES
-('Mumbai', 30.0, 'full sun', 'high', 'dark', 6.5),
-('Pune', 25.0, 'partial sun', 'moderate', 'light', 7.0);
-
--- Associating plants with the location-based conditions
-INSERT INTO recommended_plants (location_id, plant_id)
-VALUES
-(1, 1), -- Mumbai -> Rose
-(1, 4), -- Mumbai -> Basil
-(2, 2), -- Pune -> Tulip
-(2, 3); -- Pune -> Lavender
+('Mango', 'Maharashtra', 27.00, 'full sun', 'moderate', 'moderate', 'loamy', 6.00, 7.50),
+('Coconut', 'Kerala', 28.00, 'full sun', 'high', 'high', 'sandy', 5.50, 7.00),
+('Tomato', 'Punjab', 24.00, 'partial sun', 'moderate', 'moderate', 'loamy', 6.00, 7.00),
+('Wheat', 'Haryana', 25.00, 'full sun', 'moderate', 'low', 'silty', 6.00, 7.50),
+('Rice', 'West Bengal', 26.00, 'full sun', 'high', 'high', 'clay', 5.00, 6.50),
+('Orange', 'Nagpur', 30.00, 'full sun', 'moderate', 'low', 'loamy', 6.00, 7.00),
+('Grapes', 'Nashik', 23.00, 'partial sun', 'moderate', 'low', 'chalky', 6.50, 8.00),
+('Cotton', 'Gujarat', 28.00, 'full sun', 'low', 'moderate', 'sandy', 6.50, 8.00),
+('Pomegranate', 'Rajasthan', 30.00, 'full sun', 'low', 'low', 'loamy', 6.50, 8.00),
+('Sugarcane', 'Uttar Pradesh', 27.00, 'full sun', 'high', 'high', 'clay', 6.00, 7.50);
