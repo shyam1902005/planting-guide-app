@@ -1,0 +1,217 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-image: url(background.jpeg.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    transition: background-color 0.3s ease-in-out;
+    color: #fff;
+}
+
+/* Dark mode support */
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #ddd;
+}
+
+/* Advanced glassmorphism container with sleek design */
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    /* Reduced opacity for glass effect */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 30px;
+    border-radius: 20px;
+    /* More rounded corners for a modern look */
+    width: auto;
+    height: auto;
+    max-width: 900px;
+    max-height: 90%;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    /* Stronger shadow for depth */
+    transition: all 0.3s ease;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    /* Subtle blur for glass effect */
+}
+
+/* Expanded styles for larger content */
+.container.expanded {
+    width: 90%;
+    height: 90%;
+    overflow-y: auto;
+}
+
+/* Heading styles */
+h1 {
+    color: #34D399;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+    letter-spacing: 1px;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Dark mode heading */
+body.dark-mode h1 {
+    color: #10B981;
+}
+
+/* Selection section styles */
+#selection {
+    margin-bottom: 30px;
+}
+
+/* Style for all instruction labels (e.g., Enter location, Sunlight exposure) */
+#selection label,
+#selection .instruction {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #2B2B2B;
+    /* Darker color for better visibility */
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Dropdown, input field, and button styles */
+.dropdown,
+.input-field,
+.submit-btn {
+    width: calc(100% - 22px);
+    padding: 12px;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease-in-out;
+    color: #333;
+    font-weight: 500;
+    outline: none;
+}
+
+/* Button-specific styles */
+.submit-btn {
+    background-color: #34D399;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    /* Button shadow for elevation */
+}
+
+.submit-btn:hover {
+    background-color: #10B981;
+}
+
+/* Hover and focus effects */
+.dropdown:focus,
+.input-field:focus,
+.submit-btn:focus {
+    border-color: #34D399;
+    transform: translateY(-2px);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Output section styles with smooth fade-in animation */
+.output-section {
+    margin-top: 30px;
+    text-align: center;
+    animation: fadeIn 0.5s ease;
+}
+
+.output-section h3 {
+    color: #34D399;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+}
+
+.output-section p {
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+/* Help text styles */
+.help-text {
+    font-size: 0.9rem;
+    margin-left: 10px;
+    color: #00A8FF;
+}
+
+.help-text a {
+    color: #00A8FF;
+    text-decoration: none;
+}
+
+.help-text a:hover {
+    text-decoration: underline;
+}
+
+/* Smooth fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Dark mode support for inputs and buttons */
+body.dark-mode .dropdown,
+body.dark-mode .input-field,
+body.dark-mode .submit-btn {
+    background-color: rgba(50, 50, 50, 0.8);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+body.dark-mode .submit-btn {
+    background-color: #10B981;
+}
+
+body.dark-mode .submit-btn:hover {
+    background-color: #059669;
+}
+
+/* Dark mode output section */
+body.dark-mode .output-section h3 {
+    color: #10B981;
+}
+
+/* Media query for mobile responsiveness */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    .output-section h3 {
+        font-size: 1.2rem;
+    }
+
+    .submit-btn {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
