@@ -30,7 +30,8 @@ $sql = "SELECT plant_name FROM plants
         AND water_availability = ?
         AND humidity = ?
         AND soil_quality = ?
-        AND soil_ph_min <= ? AND soil_ph_max >= ?";
+        AND soil_ph_min <= ? AND soil_ph_max >= ?
+        ORDER BY plant_name"; // Order the results by plant name
 
 $stmt = $conn->prepare($sql);
 $stmt->bind_param(
@@ -57,9 +58,10 @@ if ($result->num_rows > 0) {
 // Return the result as an HTML table
 header('Content-Type: text/html');
 if (count($plants) > 0) {
-    echo "<table><tr><th>Recommended Plants</th></tr>";
+    echo "<table style='border-collapse: collapse; width: 100%;'>";
+    echo "<tr><th style='border: 1px solid #000; padding: 8px;'>Recommended Plants</th></tr>";
     foreach ($plants as $plant) {
-        echo "<tr><td>" . htmlspecialchars($plant) . "</td></tr>";
+        echo "<tr><td style='border: 1px solid #000; padding: 8px;'>" . htmlspecialchars($plant) . "</td></tr>";
     }
     echo "</table>";
 } else {

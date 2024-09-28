@@ -10,7 +10,7 @@ function closeNav() {
 
 // hero section
 function getStarted() {
-  window.location.href = "your-planting-guide-form-url"; // Replace with actual URL
+  window.location.href = "tool/index.html"; // Replace with actual URL
 }
 
 let slideIndex = 1;
