@@ -28,7 +28,7 @@ document.getElementById("plant-type").addEventListener("change", function () {
             }
 
             // Send plant name to PHP using fetch
-            fetch('get_plant_info.php', {
+            fetch('../get_plant_info.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
