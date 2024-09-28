@@ -25,7 +25,7 @@ $soil_ph = $_POST['soil_ph'] ?? '';
 // Prepare SQL query to find suitable plants based on input conditions
 $sql = "SELECT plant_name FROM plants 
         WHERE location = ? 
-        AND avg_temp <= ? + 5 AND avg_temp >= ? - 5
+        AND avg_temp_min <= ? AND avg_temp_max >= ?
         AND sunlight = ?
         AND water_availability = ?
         AND humidity = ?
