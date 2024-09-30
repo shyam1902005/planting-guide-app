@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Plant Recommendation Tool</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Plant Recommendation Tool</h1>
+        <div id="selection">
+            <label for="plant-type">Select Plant Type:</label><br><br>
+            <select id="plant-type" class="dropdown" required>
+                <option value="">--Select an Option--</option>
+                <option value="particular-plant">Particular Plant</option>
+                <option value="location-based-plant">Location Based Plant</option>
+            </select><br><br>
+        </div>
+        <div id="dynamic-input"></div>
+        <div id="plant-info" class="output-section"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
