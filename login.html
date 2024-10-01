@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <a href="index.php" class="logo">
+                <img src="plant_logo.png" alt="Logo"><span>Planting Guide</span>
+            </a>
+        </div>
+        <nav class="nav-center">
+            <ul>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="register.html">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="login-container">
+        <div class="form-wrapper">
+            <h2>Login</h2>
+            <form action="login.php" method="POST">
+                <input type="text" placeholder="Username" required name="username">
+                <input type="password" placeholder="Password" required name="password">
+                <button type="submit">Login</button>
+                <p>Don't have an account? <a href="register.html">Sign Up</a></p>
+            </form>
+        </div>
+    </div>
+
+    <style>
+        /* Add your CSS here */
+         body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('bg5.jpeg'); /* Add your nature background image here */
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding-top: 80px; /* Space for the fixed header */
+        }
+
+        .form-wrapper {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            width: 300px; /* Set a max width for the form */
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px -10px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #15D155;
+            color: white;
+            border: none;
+            padding: 10px;
+            padding: right 100px;
+            border-radius: 5px;
+            cursor: pointer;
+            border-left-width: 50px;
+        }
+
+        button:hover {
+            background-color: #363636;
+        }.nav-center ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+
+  .nav-center {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .nav-center li {
+    margin-right: 20px;
+  }
+  
+  .nav-center a {
+    color: var(--lightest-color);
+    text-decoration: none;
+  }
+  
+  .nav-center a:hover {
+    color: var(--brand-color);
+  }
+
+  .logo-container {
+    margin-right: 20px;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #FFFFFF;
+  }
+  
+  .logo img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+  
+  .logo span {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+
+
+        p {
+            margin-top: 20px;
+        }
+
+        a {
+            color: #15D155;
+            text-decoration: none;
+        }
+    </style>
+    </style>
+
+</body>
+</html>
