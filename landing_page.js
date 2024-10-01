@@ -10,7 +10,7 @@ function closeNav() {
 
 // hero section
 function getStarted() {
-  window.location.href = "your-planting-guide-form-url"; // Replace with actual URL
+  window.location.href = "tool/index.html"; // Replace with actual URL
 }
 
 let slideIndex = 1;
@@ -77,3 +77,10 @@ window.addEventListener('scroll', function() {
     header.style.backgroundColor = 'rgba(0, 0, 0, 1)'; // More transparent at the top
   }
 });
+function goToRegister() {
+  window.location.href = "register.html"; // Redirect to the registration page
+}
+
+function goToLogin() {
+  window.location.href = "login.html"; // Redirect to the login page
+}
