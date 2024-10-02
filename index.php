@@ -45,7 +45,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : '';
         </nav>
         <div class="auth-container">
     <?php if ($isLoggedIn): ?>
-        <p>Welcome, <?php echo htmlspecialchars($username); ?>!</p>
+        <p class="user-log">Welcome, <?php echo htmlspecialchars($username); ?>!</p>
         <a href="logout.php" class="logout-button">Logout</a>
     <?php else: ?>
         <button class="sign-up" onclick="window.location.href='register.html'">Sign Up</button>

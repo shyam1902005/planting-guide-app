@@ -2,7 +2,7 @@
 // Database connection parameters
 $servername = "localhost";
 $username = "root"; // Default XAMPP username for MySQL
-$password = "Sujeet@12"; // Default XAMPP password for MySQL (usually empty)
+$password = "Shyam@1908"; // Default XAMPP password for MySQL (usually empty)
 $dbname = "planting_guide"; // Replace with your database name
 
 // Create the connection

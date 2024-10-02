@@ -200,3 +200,11 @@ INSERT INTO plant_locations (plant_id, location_id) VALUES
 ((SELECT id FROM plants WHERE plant_name = 'Coconut'), (SELECT id FROM locations WHERE state_name = 'Goa'));
 
 -- Continue adding plant-state relationships for other plants.
+
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,   -- Unique user ID
+    username VARCHAR(50) NOT NULL UNIQUE, -- Username (must be unique)
+    email VARCHAR(100) NOT NULL UNIQUE,  -- Email address (must be unique)
+    password VARCHAR(255) NOT NULL,      -- Hashed password for authentication
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP  -- Timestamp when the user was created
+);

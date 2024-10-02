@@ -635,3 +635,23 @@ header {
     font-size: 1rem;
   }
 }
+
+.logout-button {
+  background-color:var(--brand-color) !important; /* Red background color */
+  color: white !important; /* White text color */
+  padding: 10px 20px !important; /* Padding for the button */
+  border: none !important; /* No border */
+  border-radius: 5px !important; /* Rounded corners */
+  text-decoration: none !important; /* Remove underline */
+  font-weight: bold !important; /* Bold text */
+  cursor: pointer !important; /* Change cursor on hover */
+  transition: background-color 0.3s !important; /* Smooth background transition */
+}
+
+.logout-button:hover {
+  background-color: #e60000 !important; /* Darker red on hover */
+}
+
+.user-log{
+padding : 0 20px 0 0 ;
+}
