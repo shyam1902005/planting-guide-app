@@ -78,3 +78,11 @@ window.addEventListener('scroll', function() {
   }
 });
 
+function goToRegister() {
+  window.location.href = "register.html"; // Redirect to the registration page
+}
+
+function goToLogin() {
+  window.location.href = "login.html"; // Redirect to the login page
+}
+

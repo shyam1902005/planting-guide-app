@@ -23,9 +23,9 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : '';
 
         <div id="mySidepanel" class="sidepanel">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="#">Home</a>
+            <a href="index.html">Home</a>
             <a href="tool/index.html">Plant Recommendation Tool</a>
-            <a href="#">About us</a>
+            <a href="about_us/index.html">About us</a>
             <a href="#">Bookmarks</a>
           </div>
           <button class="openbtn" onclick="openNav()">&#9776; </button>
@@ -40,7 +40,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : '';
           <ul>
             <li><a href="#">Home</a></li>
             <li><a href="tool/index.html">Plant Recommendation Tool</a></li>
-            <li><a href="#">About Us</a></li>
+            <li><a href="about_us/index.html">About Us</a></li>
           </ul>
         </nav>
         <div class="auth-container">
@@ -154,12 +154,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : '';
   </div>
 </section>
 
-    
-  
-</div>
-</section>
 
-      
       <!-- Footer Section -->
 <footer class="footer">
   <div class="footer-container">
