@@ -77,3 +77,4 @@ window.addEventListener('scroll', function() {
     header.style.backgroundColor = 'rgba(0, 0, 0, 1)'; // More transparent at the top
   }
 });
+
