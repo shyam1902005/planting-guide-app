@@ -136,8 +136,8 @@ document.getElementById("plant-type").addEventListener("change", function () {
         <label for="soil-ph">Soil pH Level:</label><br><br>
         <input type="number" id="soil-ph" name="soil-ph" class="input-field" placeholder="Enter Soil pH" min="1" max="14" step="0.1" required><br><br>
 
-        <!-- Add the YouTube help link for pH here -->
-        <span class="help-text"><a href="https://youtu.be/ejHvUnzMFoI" target="_blank">Need help with pH?</a></span>
+        <!-- Add the user manual link here -->
+        <span class="help-text"><a href="http://localhost/planting-guide-app/user%20manual/index.html" >check user manual</a></span>
         <br><br>
 
         <button type="button" id="check-location-info" class="submit-btn">Check Suitable Plants</button>

@@ -26,6 +26,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : '';
             <a href="#">Home</a>
             <a href="tool/index.html">Plant Recommendation Tool</a>
             <a href="about_us/index.html">About Us</a>
+            <a href="user manual/index.html">User manual</a>
             <a href="#">Bookmarks</a>
           </div>
           <button class="openbtn" onclick="openNav()">&#9776; </button>

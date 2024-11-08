@@ -1,0 +1,66 @@
+:root {
+    --brand-color: #15D155;
+    --darkest-color: #000000;
+    --dark-color: #363636;
+    --mid-color: #6C6C6C;
+    --light-color: #DADADA;
+    --lightest-color: #FFFFFF;
+    --highlight-color: #007BFF;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--lightest-color);
+    color: var(--dark-color);
+    margin: 0;
+    padding-top: 80px;
+}
+
+.manual-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 20px;
+    background-color: var(--lightest-color);
+    border: 1px solid var(--light-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: var(--brand-color);
+    margin: 0.5rem 0;
+    text-align: center;
+}
+
+header p {
+    font-size: 1rem;
+    color: var(--mid-color);
+    text-align: center;
+}
+
+section h2 {
+    font-size: 1.8rem;
+    color: var(--darkest-color);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 2px solid var(--brand-color);
+    padding-bottom: 8px;
+    margin-top: 1.5rem;
+}
+
+section p, ul {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul li {
+    position: relative;
+    padding-left: 20px;
+}

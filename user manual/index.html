@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Manual - Planting Guide</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="user-manual.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div id="mySidepanel" class="sidepanel">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="../index.php">Home</a>
+            <a href="../tool/index.html">Plant Recommendation Tool</a>
+            <a href="../about_us/index.html">About Us</a>
+            <a href="#">Bookmarks</a>
+        </div>
+        <button class="openbtn" onclick="openNav()">&#9776;</button>
+
+        <div class="logo-container">
+            <a href="../index.php" class="logo">
+                <img src="../plant_logo.png" alt="Planting Guide Logo">
+                <span>Planting Guide</span>
+            </a>
+        </div>
+        <nav class="nav-center">
+            <ul id="ul1">
+                <li><a href="../index.php">Home</a></li>
+                <li><a href="../tool/index.html">Plant Recommendation Tool</a></li>
+                <li><a href="../about_us/index.html">About Us</a></li>
+            </ul>
+        </nav>
+        <div class="auth-container">
+            <button class="sign-in">Sign In</button>
+            <button class="sign-up">Sign Up</button>
+        </div>
+    </header>
+
+    <main class="manual-container">
+        <main>
+            <h1>🌱 User Manual for the Planting Guide Tool</h1>
+            <p>Get the best out of the Planting Guide Tool by following these instructions for each option. We’ll guide you to make the right selections to find the perfect plants for your environment.</p>
+        </main>
+        <section>
+            <h2>1. 🌿 Choosing a Plant Type</h2>
+            <p>Begin by selecting the type of plant recommendation you need:</p>
+            <ul>
+                <li><strong>Particular Plant:</strong> Choose this if you already have a specific plant in mind. Enter the plant name for detailed information.</li>
+                <li><strong>Location-Based Plant:</strong> Select this for recommendations based on your environment (location, temperature, sunlight, etc.).</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>2. 🌸 Getting Information on a Particular Plant</h2>
+            <p>For "Particular Plant," simply enter the plant’s name (e.g., Rose, Tulip) and click "Check Plant Info" to see detailed information, including its preferred growing conditions and suitable locations.</p>
+        </section>
+
+        <section>
+            <h2>3. 🌍 Location-Based Plant Recommendations</h2>
+            <p>If you choose "Location-Based Plant," fill in the following details:</p>
+            <ul>
+                <li><strong>Location:</strong> Select your state from the dropdown list for location-based suggestions.</li>
+                <li><strong>Average Temperature:</strong> Enter your area's average temperature in Celsius (e.g., 25).</li>
+                <li><strong>Sunlight Exposure:</strong> Choose the sunlight level your area receives:
+                    <ul>
+                        <li><strong>Full Sun:</strong> Direct sunlight for 6+ hours per day.</li>
+                        <li><strong>Partial Sun:</strong> Sunlight for 3-6 hours, with shade part of the day.</li>
+                        <li><strong>Shade:</strong> Less than 3 hours of sunlight or mostly shaded.</li>
+                    </ul>
+                </li>
+                <li><strong>Water Availability:</strong> Describe water access:
+                    <ul>
+                        <li><strong>Low:</strong> Limited water, such as in dry zones.</li>
+                        <li><strong>Moderate:</strong> Regular watering or moderate rainfall.</li>
+                        <li><strong>High:</strong> Frequent watering or high rainfall.</li>
+                    </ul>
+                </li>
+                <li><strong>Humidity Level:</strong> Select Low, Moderate, or High based on your area.</li>
+                <li><strong>Soil Quality:</strong> Choose the type of soil:
+                    <ul>
+                        <li><strong>Sandy:</strong> Drains well, often dry.</li>
+                        <li><strong>Loamy:</strong> Balanced moisture and drainage.</li>
+                        <li><strong>Clay:</strong> Holds water but compacts easily.</li>
+                        <li><strong>Silty:</strong> Smooth, retains moisture.</li>
+                        <a href="https://youtu.be/PvN_oWoechg?si=CABpjT8yJ-pSUl38" target="_blank">Check Soil Quality</a>
+                    </ul>
+                </li>
+                <li><strong>Soil pH Level:</strong> Enter the soil pH (1–14). Most plants grow well in pH 6.0–7.5.<a href="https://youtu.be/ejHvUnzMFoI" target="_blank">Need help with pH?</a></li>
+            </ul>
+            <p>Once all details are filled, click "Check Suitable Plants" for tailored plant recommendations.</p>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>About Us</h3>
+                <p>Learn more about our mission to help you grow the perfect plants for your environment.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul id="ul2">
+                    <li><a href="../index.php">Home</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Info</h3>
+                <p><strong>Email:</strong> support@plantguide.com</p>
+                <p><strong>Phone:</strong> +91 0000 8888 99</p>
+                <p><strong>Location:</strong> Sion East, near KJ Somaiya Hospital 400022</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Planting Guide. All Rights Reserved.</p>
+            <ul class="social-icons">
+                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="../landing_page.js"></script>
+</body>
+</html>
